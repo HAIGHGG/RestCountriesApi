@@ -82,6 +82,7 @@ const Card = styled.div`
 	overflow: hidden;
 	background-color: var(--element);
 	color: var(--text);
+	transition: background-color 0.2s;
 
 	img {
 		width: 264px;

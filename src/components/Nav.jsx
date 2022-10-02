@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
+import { BsMoon, BsFillSunFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 function Nav() {
@@ -22,7 +22,7 @@ function Nav() {
 				<h1>Where in the world?</h1>
 			</Link>
 			<p onClick={Theme === 'dark' ? handleLightMode : handleDarkMode}>
-				{Theme === 'dark' ? (<p><BsFillSunFill /> Light Mode</p>) : (<p><BsFillMoonFill /> Dark Mode</p>)}
+				{Theme === 'dark' ? (<p><BsFillSunFill /> Light Mode</p>) : (<p><BsMoon /> Dark Mode</p>)}
 			</p>
 		</Wrapper>
 	)
@@ -39,6 +39,7 @@ const Wrapper = styled.div`
 	color: var(--text);
 	margin-bottom: 25px;
 	box-shadow: 0px -15px 20px 0px hsl(0, 0%, 9%);
+	transition: background-color 0.2s;
  
 
 	h1 {
@@ -46,6 +47,7 @@ const Wrapper = styled.div`
 		font-size: 14px;
 	}
 	P {
+		font-weight: 600;
 		font-size: 16px;
     cursor: pointer;
 	}

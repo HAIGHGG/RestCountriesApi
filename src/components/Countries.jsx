@@ -7,14 +7,11 @@ function Countries() {
 	const [country, setCountry] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 
-
-
 	const getCountry = async () => {
 		const api = await fetch(`https://restcountries.com/v3.1/all`)
 		const data = await api.json()
 		setCountry(data)
 		setIsLoading(false)
-		
 	}
 
 	useEffect(() => {
@@ -36,7 +33,7 @@ function Countries() {
 										<h2>{country.name.common}</h2>
 										<p>
 											<span>Population: </span>
-											{country.population}
+											{country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
 										</p>
 										<p>
 											<span>Region: </span>
@@ -79,6 +76,11 @@ const Card = styled.div`
 	overflow: hidden;
 	background-color: var(--element);
 	box-shadow: 0px 0px 20px -15px hsl(0, 0%, 8%);
+	transition: background-color 0.2s;
+	transition: transform 0.2s;
+	:hover {
+		transform: scale(1.05, 1.05);
+	}
 
 	img {
 		width: 264px;

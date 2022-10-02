@@ -52,7 +52,7 @@ function Country() {
 								</p>
 								<p>
 									<span>Population: </span>
-									{details.population}
+									{details.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
 								</p>
 								<p>
 									<span>Region: </span>
@@ -117,6 +117,7 @@ const BorderButton = styled.span`
 	padding: 5px;
 	box-shadow: 0px 0px 5px 0px hsl(0, 0%, 9%);
 	background-color: var(--element);
+	transition: background-color 0.3s;
 `
 
 const WrapperButton = styled.div`
@@ -134,6 +135,7 @@ const WrapperButton = styled.div`
 		border-radius: 2px;
 		box-shadow: 0px 0px 5px 0px hsl(0, 0%, 9%);
 		background-color: var(--element);
+		transition: background-color 0.2s;
 		cursor: pointer;
 	}
 	@media (min-width: 768px) {

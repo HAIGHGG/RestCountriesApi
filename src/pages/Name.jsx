@@ -68,6 +68,9 @@ const WrapperNotFound = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin-top: 50%;
+	@media (min-width: 900px) {
+		margin-top: 10%;
+	}
 `
 
 const DivNotFound = styled.div`
@@ -98,6 +101,7 @@ const Card = styled.div`
 	overflow: hidden;
 	background-color: var(--element);
 	color: var(--text);
+	transition: background-color 0.2s;
 
 	img {
 		width: 264px;
