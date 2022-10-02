@@ -86,10 +86,10 @@ function Country() {
 								</p>
 
 								{typeof border === 'undefined' ? (
-									<p>Borders: None</p>
+									<p><StyledSpan>Borders:</StyledSpan> None</p>
 								) : (
 									<p>
-										Borders:
+										<StyledSpan>Borders: </StyledSpan>
 										{border.map(border => {
 											return (
 												<Link to={'/country/' + border} key={border}>
@@ -107,6 +107,11 @@ function Country() {
 		</div>
 	)
 }
+
+const StyledSpan = styled.span`
+	font-weight: 600;
+`
+
 const BorderButton = styled.span`
 	margin: 0 5px;
 	padding: 5px;
@@ -160,6 +165,7 @@ const Wrapper = styled.div`
 	section {
 		width: 305px;
 		overflow-wrap: break-word;
+		margin-bottom: 30px;
 		div {
 			p {
 				font-size: 14px;
