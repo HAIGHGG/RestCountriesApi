@@ -4,16 +4,16 @@ import { BsMoon, BsFillSunFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 function Nav() {
-	const [Theme, SetTeme] = useState([])
+	const [Theme, SetTheme] = useState([])
 
 	const handleLightMode = () => {
-    SetTeme('')
-		document.documentElement.setAttribute('theme', '')
+    SetTheme('light')
+		document.documentElement.setAttribute('theme', 'light')
 	}
 
 	const handleDarkMode = () => {
-    SetTeme('dark')
-		document.documentElement.setAttribute('theme', 'dark')
+    SetTheme('')
+		document.documentElement.setAttribute('theme', '')
 	}
 
 	return (
@@ -21,8 +21,8 @@ function Nav() {
 			<Link to={'/'}>
 				<h1>Where in the world?</h1>
 			</Link>
-			<p onClick={Theme === 'dark' ? handleLightMode : handleDarkMode}>
-				{Theme === 'dark' ? (<p><BsFillSunFill /> Light Mode</p>) : (<p><BsMoon /> Dark Mode</p>)}
+			<p onClick={Theme === 'light' ? handleDarkMode : handleLightMode}>
+				{Theme === 'light' ? (<p><BsMoon /> Dark Mode</p>) : (<p><BsFillSunFill /> Light Mode</p>)}
 			</p>
 		</Wrapper>
 	)
