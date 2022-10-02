@@ -7,8 +7,8 @@ function Nav() {
 	const [Theme, SetTeme] = useState([])
 
 	const handleLightMode = () => {
-    SetTeme('light')
-		document.documentElement.setAttribute('theme', 'light')
+    SetTeme('')
+		document.documentElement.setAttribute('theme', '')
 	}
 
 	const handleDarkMode = () => {
